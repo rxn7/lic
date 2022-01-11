@@ -23,6 +23,6 @@ static unsigned long count_lines(const char *file_path) {
 
 int main(int argc, const char **argv) {
 	for(unsigned int i=1; i<argc; ++i) {
-		printf("%s: %lu\n", argv[i], count_lines(argv[1]));
+		printf("%s: %lu\n", argv[i], count_lines(argv[i]));
 	}
 }
