@@ -9,6 +9,5 @@ Lic is a simple program that prints line count of specified files.
 # Usage
 `lic <file(s)>`  
 
-## Example
-`lic lic.c`  
-`lic lic.c Makefile`  
+# Example
+![Example](/example.png)
