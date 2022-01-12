@@ -27,10 +27,9 @@ int main(int argc, const char **argv) {
 	}
 
 	long count;
-	unsigned int i = 1;
         unsigned int total = 0;
 	
-        for(; i<argc; ++i) {
+        for(unsigned int i = 1; i<argc; ++i) {
 		count = count_lines(argv[i]);
 
 		if(count == -1) {
@@ -41,7 +40,7 @@ int main(int argc, const char **argv) {
 		printf("%s: %lu\n", argv[i], count);
 	}
 
-	if(i > 2) {
+	if(argc > 2) {
 		printf("\ntotal lines: %u\n", total);
 	}
 }
