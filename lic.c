@@ -28,5 +28,5 @@ int main(int argc, const char **argv) {
 		printf("%s: %lu\n", argv[i], count_lines(argv[i]));
                 total+=count_lines(argv[i]);
 	}
-        printf("total lines: %u\n", total);
+        printf("\ntotal lines: %u\n", total);
 }
