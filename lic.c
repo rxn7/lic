@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 static long count_lines(const char *file_path) {
 	FILE *f = fopen(file_path, "r");
