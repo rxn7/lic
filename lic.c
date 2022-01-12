@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static unsigned long count_lines(const char *file_path) {
+static long count_lines(const char *file_path) {
 	FILE *f = fopen(file_path, "r");
 	if(!f) {
 		fprintf(stderr, "Failed to open file `%s`.\n", file_path);
-		return 0;
+		return -1;
 	}
 
 	unsigned long count = 0;
@@ -22,14 +22,14 @@ static unsigned long count_lines(const char *file_path) {
 }
 
 int main(int argc, const char **argv) {
-        unsigned int  total = 0; 
-	unsigned long count;
+        unsigned int total = 0; 
+	long count;
 	unsigned int i = 1;
 	
         for(; i<argc; ++i) {
 		count = count_lines(argv[i]);
 
-		if(count == 0) {
+		if(count == -1) {
 			continue;
 		}
 
