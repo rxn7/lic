@@ -21,9 +21,14 @@ static long count_lines(const char *file_path) {
 }
 
 int main(int argc, const char **argv) {
-        unsigned int total = 0; 
+	if(argc < 2) {
+		printf("Usage: `lic <file(s)>`\n");
+		return -1;
+	}
+
 	long count;
 	unsigned int i = 1;
+        unsigned int total = 0;
 	
         for(; i<argc; ++i) {
 		count = count_lines(argv[i]);
