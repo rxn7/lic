@@ -28,6 +28,11 @@ int main(int argc, const char **argv) {
 	
         for(; i<argc; ++i) {
 		count = count_lines(argv[i]);
+
+		if(count == 0) {
+			continue;
+		}
+
 		total += count;
 		printf("%s: %lu\n", argv[i], count);
 	}
