@@ -21,6 +21,7 @@ static long count_lines(const char *file_path) {
 }
 
 int main(int argc, const char **argv) {
+	/* If the user didn't specify any file */
 	if(argc < 2) {
 		printf("Usage: `lic <file(s)>`\n");
 		return -1;
@@ -32,14 +33,14 @@ int main(int argc, const char **argv) {
         for(unsigned int i = 1; i<argc; ++i) {
 		count = count_lines(argv[i]);
 
-		if(count == -1) {
-			continue;
-		}
+		/* Continue if file failed to load */
+		if(count == -1) continue;
 
 		total += count;
-		printf("%s: %lu\n", argv[i], count);
+		printf("%s: %lu lines\n", argv[i], count);
 	}
 
+	/* Print total lines only if at least 2 files were specified */
 	if(argc > 2) {
 		printf("\nTotal lines: %u\n", total);
 	}
