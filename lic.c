@@ -41,6 +41,6 @@ int main(int argc, const char **argv) {
 	}
 
 	if(argc > 2) {
-		printf("\ntotal lines: %u\n", total);
+		printf("\nTotal lines: %u\n", total);
 	}
 }
