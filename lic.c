@@ -1,9 +1,16 @@
 #include <stdio.h>
+#include <sys/stat.h>
 
 static long count_lines(const char *file_path) {
 	FILE *f = fopen(file_path, "r");
 	if(!f) {
 		fprintf(stderr, "Failed to open file `%s`.\n", file_path);
+		return -1;
+	}
+
+	struct stat path_stat;
+	stat(file_path, &path_stat);
+	if(S_ISDIR(path_stat.st_mode)) {
 		return -1;
 	}
 
